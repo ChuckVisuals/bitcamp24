@@ -1,8 +1,17 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useState } from 'react';
 import NavBar from "./components/navbar";
 import DashBoardImage from "public/images/DashBoardPanel1.jpg"
 
 export default function Home() {
+
+  const [data, setData] = useState<string | null>(null);
+  useEffect(() => {
+    fetch('https://bitcamp-backend.vercel.app/test')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
   return (
 
     <main className="">
@@ -12,7 +21,9 @@ export default function Home() {
       </div>
       <div className="bg-pink-400 h-[400px] mt-10 mx-5 rounded-lg">
       </div>
-
+      <div className="bg-blue-300">
+        {data && <div>{data}</div>}
+      </div>
     </main>
   );
 
