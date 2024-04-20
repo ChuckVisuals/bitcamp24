@@ -1,3 +1,22 @@
+## Ideas
+
+### Required
+- [ ] splitting bills with roommates (groceries, toiletries, cleaning supplies, etc.)
+- [ ] chore calendar/schedule
+- [ ] calendar for "reserving" rooms for parties or cooking
+
+### Good Additions
+- [ ] list things you need to buy (groceries, toiletries, cleaning supples, etc.)
+
+### Aspirations
+- [ ] roommate scoring
+- [ ] find roommate/apartment with roommates with desired qualities
+- [ ] add preference to type of roommate
+- [ ] interface list of things to buy with 3rd party sites (amazon, walmart, instacart, etc.)
+- [ ] interace with universities
+- [ ] place to keep track of ownership for furniture, pots/pans, etc.
+- [ ] mobile app, push notifications, email notifications
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
