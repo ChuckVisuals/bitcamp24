@@ -16,6 +16,7 @@ export default function Home() {
       <NavBar />
       <div className="bg-blue-300">
         {data && <div>{data}</div>}
+
       </div>
     </main>
   );
