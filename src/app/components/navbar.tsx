@@ -19,10 +19,6 @@ const Navbar: React.FC = () => {
                 <Link className="font-bold text-lg pb-1 border-b-2 border-transparent hover:border-current transition-all duration-500 -translate-y-2" href="/about">
                     About
                 </Link>
-
-                <Link className="font-bold text-lg pb-1 border-b-2 border-transparent hover:border-current transition-all duration-500 -translate-y-2 my-2" href="/contact">
-                    Settings
-                </Link>
             </div>
 
         </nav>
