@@ -15,6 +15,7 @@ export default function Home() {
   };
 
   return (
+
     <div>
       <div className="h-[1000px] bg-gradient-to-b from-pink-950 to-pink-900">
         <div className="font-sans text-9xl flex items-center justify-center pt-36">
@@ -35,4 +36,5 @@ export default function Home() {
       </div>
     </div>
   );
+
 }
