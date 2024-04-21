@@ -17,6 +17,7 @@ const chore = {
 export default function Dashboard() {
 
     const [data, setData] = useState(null);
+    const [input, setInput] = useState('');
 
     //testing api
     useEffect(() => {
@@ -38,20 +39,32 @@ export default function Dashboard() {
     }, []);
 
     useEffect(() => {
-        fetch('https://bitcamp-backend.vercel.app/getchoretoday?group_name=balls')
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                setData(data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+        if (input) {
+            fetch(`https://bitcamp-backend.vercel.app/getchoretoday?group_name=${input}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    setData(data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
 
-    }, []);
+    }, [input]);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setInput(event.target.elements.input.value);
+    };
+
 
     return (
         <div className="bg-stone-900 w-screen h-screen pt-32 px-16">
+            <form onSubmit={handleSubmit} className="text-white">
+                <input name="input" type="text" className="bg-gray-800 p-2 rounded" />
+                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+            </form>
             <div className="grid grid-cols-3 gap-4 gap-y-32">
                 {data && data.map((chore, index) => (
                     <Chores
