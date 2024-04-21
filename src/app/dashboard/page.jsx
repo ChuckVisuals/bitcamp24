@@ -16,7 +16,7 @@ const chore = {
 
 export default function Dashboard() {
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [input, setInput] = useState('');
     const [showForm, setShowForm] = useState(false);
     const [formdata, setFormData] = useState({});
@@ -50,19 +50,22 @@ export default function Dashboard() {
     }, [formdata]);
 
     useEffect(() => {
+        console.log('input', input);
         if (input) {
-            fetch(`https://bitcamp-backend.vercel.app/getchoretoday?group_name=${input}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    setData(data);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
+            setTimeout(() => {
+                fetch(`https://bitcamp-backend.vercel.app/getchoretoday?group_name=${input}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        setData(data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            }, 1000);
         }
 
-    }, [input]);
+    }, [input, formdata]);
 
     const fetchChores = (endpoint) => {
         fetch(`https://bitcamp-backend.vercel.app/${endpoint}?group_name=${input}`)
@@ -107,8 +110,11 @@ export default function Dashboard() {
             fulfiller: fulfiller,
         };
         console.log('chore', chore);
-        setFormData(chore);
         setShowForm(false);
+        setFormData(chore);
+        setInput(input) //used to refresh the page
+
+
     };
 
     return (
@@ -140,7 +146,7 @@ export default function Dashboard() {
 
             {/* Chores */}
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 gap-y-32 justify-items-center">
-                {data && data.map((chore, index) => (
+                {data != null && data.map((chore, index) => (
                     <Chores
                         key={index}
                         group_name={chore.group_name}
