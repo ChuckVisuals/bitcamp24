@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
-import NavBar from "./components/navbar";
+import Image from 'next/image';
+import LandingLogo from "../../public/RoommateListLogo.png";
 
 export default function Home() {
 
@@ -17,16 +18,17 @@ export default function Home() {
         <div className="font-sans text-9xl flex items-center justify-center pt-10">
           Roomiez
         </div>
-        <div className="flex">
-          <div>
-            Schedule and Plan Tasks with Your Roommates
+        <div className="flex mt-20 mx-20 space-x-10 justify-center items-center ">
+          <div className="text-4xl font-bold text-left">
+            Schedule and Plan Tasks <br />with Your Roommates
           </div>
-          <div>
-
-          </div>
+          <Image src={LandingLogo} alt="Landing Logo" width={500} height={500} />
         </div>
       </div>
-      <div className="bg-white h-[300px]">
+      <div className="bg-white h-[600px]">
+
+      </div>
+      <div className="bg-black h-[400px]">
 
       </div>
     </div>
