@@ -130,7 +130,7 @@ export default function Dashboard() {
         console.log('data', data);
 
         //remove from database
-        fetch(`https://bitcamp-backend.vercel.app/deletechore?group_name=${groupName}&name=${name}`)
+        fetch(`https://bitcamp-backend.vercel.app/deletechorebyname?group_name=${groupName}&name=${name}`)
             .then(response => response.json())
             .then(data => {
                 console.log('Deleted:', data);
