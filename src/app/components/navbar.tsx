@@ -4,23 +4,23 @@ import Link from 'next/link';
 
 const Navbar: React.FC = () => {
     return (
-        <nav>
-            <div className="flex flex-row space-x-6 border-b-2 w-full border-gray-200">
+        <nav className="sticky top-0 z-4 bg-black bg-opacity-50 backdrop-blur">
+            <div className="flex flex-row space-x-8 border-b-2 border-gray-200 items-center justify-center pt-6">
 
-                <Link href="/">
+                <Link className="font-bold text-2xl pb-6" href="/">
                     Home
                 </Link>
 
-                <Link href="/dashboard">
+                <Link className="font-bold text-2xl pb-6" href="/dashboard">
                     Dashboard
                 </Link>
 
 
-                <Link href="/about">
+                <Link className="font-bold text-2xl pb-6" href="/about">
                     About
                 </Link>
 
-                <Link href="/contact">
+                <Link className="font-bold text-2xl pb-6" href="/contact">
                     Settings
                 </Link>
             </div>

@@ -6,18 +6,29 @@ export default function Home() {
 
   const [data, setData] = useState<string | null>(null);
   useEffect(() => {
-    fetch('https://bitcamp-backend.vercel.app/test')
+    fetch('https://bitcamp-backend.vercel.app/')
       .then(response => response.json())
       .then(data => setData(data));
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <NavBar />
-      <div className="bg-blue-300">
-        {data && <div>{data}</div>}
+    <div>
+      <div className="h-[1000px] bg-gradient-to-b from-pink-950 to-pink-900">
+        <div className="font-sans text-9xl flex items-center justify-center pt-10">
+          Roomiez
+        </div>
+        <div className="flex">
+          <div>
+            Schedule and Plan Tasks with Your Roommates
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </div>
+      <div className="bg-white h-[300px]">
 
       </div>
-    </main>
+    </div>
   );
 }
