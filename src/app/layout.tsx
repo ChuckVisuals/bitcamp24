@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="overflow-x-hidden">
         <div className="z-20 relative">
           <NavBar />
         </div>
