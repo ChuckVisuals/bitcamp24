@@ -53,11 +53,30 @@ export default function Dashboard() {
 
     }, [input]);
 
+    const fetchChores = (endpoint) => {
+        fetch(`https://bitcamp-backend.vercel.app/${endpoint}?group_name=${input}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                setData(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         setInput(event.target.elements.input.value);
     };
 
+    const handleTodayChores = () => {
+        fetchChores('getchoretoday');
+    };
+
+    const handleTomorrowChores = () => {
+        fetchChores('getchoretomorrow');
+    };
 
     return (
         <div className="bg-stone-900 w-screen h-screen pt-32 px-16">
@@ -65,6 +84,14 @@ export default function Dashboard() {
                 <input name="input" type="text" className="bg-gray-800 p-2 rounded" />
                 <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
             </form>
+            <div className="mb-4">
+                <button onClick={handleTodayChores} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+                    Today's Chores
+                </button>
+                <button onClick={handleTomorrowChores} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                    Tomorrow's Chores
+                </button>
+            </div>
             <div className="grid grid-cols-3 gap-4 gap-y-32">
                 {data && data.map((chore, index) => (
                     <Chores
