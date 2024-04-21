@@ -2,7 +2,7 @@
 
 ### Required
 - [ ] splitting bills with roommates (groceries, toiletries, cleaning supplies, etc.)
-- [ ] chore calendar/schedule
+- [X] chore calendar/schedule
 - [ ] calendar for "reserving" rooms for parties or cooking
 
 ### Good Additions
