@@ -60,7 +60,7 @@ export default function Dashboard() {
 
 
     return (
-        <div className="bg-stone-900 w-screen h-screen pt-32 px-16">
+        <div className="bg-stone-900 w-screen min-h-screen pt-32 px-16">
             <form onSubmit={handleSubmit} className="text-white mb-16">
                 <input name="input" type="text" className="bg-gray-800 p-2 rounded" />
                 <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
